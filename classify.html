@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classify a Document</title>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" type="text/css" href="styles/global.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+  <div id="vue-app">
+    <nav>
+      <div class="nav-wrapper white">
+        <a href="#" class="brand-logo black-text waves-effect waves-dark"
+        style="font-size:25px; font-weight:300; margin-left:15px">NB Classifier</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons  black-text">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#" class="black-text waves-effect waves-dark">Home</a></li>
+          <li><a href="#" class="black-text waves-effect waves-dark">Train</a></li>
+          <li><a href="#" class="black-text waves-effect waves-dark">Classify</a></li>
+          <li><a href="#" class="black-text waves-effect waves-dark">About</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#" class="black-text waves-effect waves-dark">Home</a></li>
+          <li><a href="#" class="black-text waves-effect waves-dark">Train</a></li>
+          <li><a href="#" class="black-text waves-effect waves-dark">Classify</a></li>
+          <li><a href="#" class="black-text waves-effect waves-dark">About</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="showcase">
+
+      <div class="row">
+
+        <div class="col l10 s12" style="height:auto; text-align:center">
+          <h4 id="showcase-text" class="white-text material-font">
+            Classify a document by clicking the button below.
+          </h4>
+          <a
+          onclick="uploadSingleDocument()"
+          class="center-align waves-effect waves-light btn-large"
+          style="background:#ffad33; margin-top:20px; width:150px;">Select
+          </a>
+          <p class="material-font white-text"
+          style="font-size:28px; margin:100px 100px 0px 100px">
+            "Within the last three years the amount of classified materials
+            has doubled to 15.6 million decisions to classify documents."
+            <!-- "I've signed thousands of documents, but never read them." -->
+
+          </p>
+          <p class="material-font white-text" style="font-size:25px">
+            -Hodding Carter
+            <!-- -Terry McAuliffe -->
+          </p>
+        </div>
+
+        <div class="col l2 s12" style="height:auto;background:#203346; padding:20px; text-align:center">
+          <h5 class="white-text material-font">Trained Categories</h5>
+          <div class="separator"></div>
+          <ul>
+            <li class="white-text material-font">History</li>
+            <li class="white-text material-font">Science</li>
+            <li class="white-text material-font">Math</li>
+            <li class="white-text material-font">Education</li>
+            <li class="white-text material-font">Literature</li>
+            <li class="white-text material-font">Porn</li>
+            <li class="white-text material-font">Hentai</li>
+            <li class="white-text material-font">Illegal</li>
+            <a class="btn waves-effect waves-light orange-btn white black-text"
+            style="margin-top:10px">Add New</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form style="display: none" method="post"
+    enctype="multipart/form-data"
+    id="fileUploadForm">
+    <input type="file" id="file1" name="file1" />
+    <input type="submit" value="Submit" id="btnSubmit" />
+  </form>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+  <script type="text/javascript" src="scripts/utils.js"></script>
+  <script src="scripts/index.js"></script>
+  <script src="scripts/classify.js"></script>
+
+</body>
+
+</html>
